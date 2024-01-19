@@ -33,3 +33,9 @@ class Whiteboard:
 
     def change_line_width(self, value):
         self.line_width = int(value)
+
+    def change_canvas_color(self):
+        latest_canvas_color = self.canvas.config('bg')[-1]
+        color = askcolor(initialcolor = latest_canvas_color if latest_canvas_color else 'white')[1]
+        if color:
+            self.canvas.configure(bg=color)
