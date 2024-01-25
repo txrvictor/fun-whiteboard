@@ -46,6 +46,13 @@ def main():
             command = lambda: canvas.delete("all"))
     clear_button.pack(side = tk.TOP, fill = tk.X, padx = 5, pady = 5)
 
+    color_button = tk.Button(
+            controls_frame, text = "Save JPG", 
+            fg = "white", bg = "#5b5b5b",
+            activeforeground = "white", activebackground = "#787878",
+            command = whiteboard.save_image)
+    color_button.pack(side = tk.TOP, fill = tk.X, padx = 5, pady = 5)
+
     root.mainloop()
 
 if __name__ == "__main__":

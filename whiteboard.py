@@ -1,5 +1,6 @@
-from tkinter import ROUND
+from tkinter import filedialog, ROUND
 from tkinter.colorchooser import askcolor
+from PIL import ImageGrab
 
 class Whiteboard:
     def __init__(self, canvas):
@@ -39,3 +40,22 @@ class Whiteboard:
         color = askcolor(initialcolor = latest_canvas_color if latest_canvas_color else 'white')[1]
         if color:
             self.canvas.configure(bg=color)
+    
+    def save_image(self):
+        self.canvas.update()
+        self.canvas.focus()
+
+        x0 = self.canvas.winfo_rootx()
+        y0 = self.canvas.winfo_rooty()
+        x1 = x0 + self.canvas.winfo_width()
+        y1 = y0 + self.canvas.winfo_height()
+
+        img = ImageGrab.grab((x0, y0, x1, y1))
+        
+        # only save after grabbing the image, otherwise it will screen capture
+        # the filedialog window or anything over the canvas as well
+        filename = filedialog.asksaveasfile(mode = 'w', defaultextension = ".jpg")
+        if not filename:
+            return
+
+        img.save(filename)
