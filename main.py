@@ -1,9 +1,13 @@
 #!/usr/bin/env python3
 
-import tkinter as tk
 import whiteboard as wb
 
 def main():
+    try:
+        import tkinter as tk
+    except:
+        exit("Must install tkinter for your OS")
+
     root = tk.Tk()
     root.title("Fun Whiteboard")
     root.geometry("800x600")
