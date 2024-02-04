@@ -9,3 +9,35 @@ Preview:
 Saved as JPG:
 
 ![test](https://github.com/txrvictor/fun-whiteboard/assets/75559055/48702b04-467a-49c4-a89e-cd7d22b8c089)
+
+
+### Usage
+
+1) Make sure to install [Tkinter](https://docs.python.org/3/library/tkinter.html) for your OS
+
+2) Clone the repo
+
+3) Change to the repo's directory:
+```
+cd fun-whiteboard
+```
+
+4) Create virtual environment:
+```
+python3 -m venv venv
+```
+
+4) Activate the virtual environment:
+```
+source venv/bin/activate
+```
+
+5) Install requirements for the venv:
+```
+pip3 install -r requirements.txt
+```
+
+6) Run the app:
+```
+pithon3 main.py
+```
