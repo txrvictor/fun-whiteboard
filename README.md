@@ -27,17 +27,17 @@ cd fun-whiteboard
 python3 -m venv venv
 ```
 
-4) Activate the virtual environment:
+5) Activate the virtual environment:
 ```
 source venv/bin/activate
 ```
 
-5) Install requirements for the venv:
+6) Install requirements for the venv:
 ```
 pip3 install -r requirements.txt
 ```
 
-6) Run the app:
+7) Run the app:
 ```
 python3 main.py
 ```
